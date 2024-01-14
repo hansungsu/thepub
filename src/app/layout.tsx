@@ -1,3 +1,5 @@
+import StyledComponentsRegistry from "@/lib/registry";
+
 import Nav from "@/components/layout/nav";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -16,10 +18,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html>
       <body className={inter.className}>
-        <Nav />
-        <section className="container mx-auto">{children}</section>
+        <StyledComponentsRegistry>
+          <Nav />
+          <section className="container mx-auto">{children}</section>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

@@ -2,11 +2,8 @@ import Link from "next/link";
 import { BLOG_URL } from "@/constants/url";
 
 async function getPosts() {
-  // 데이터를 가져올 url 정의
   const url = `${BLOG_URL}/wp-json/wp/v2/posts`;
   const res = await fetch(url);
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
