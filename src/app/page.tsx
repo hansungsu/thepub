@@ -1,24 +1,24 @@
 "use client";
 import { Container } from "@/components/container";
 import { useEffect } from "react";
-import Example from "@/components/game/Example";
-
-const config = {
-  type: Phaser.AUTO,
-  width: 800,
-  height: 600,
-  parent: "phaser-container",
-  scene: Example,
-  physics: {
-    default: "arcade",
-    arcade: {
-      gravity: { y: 0 },
-    },
-  },
-};
+import Example from "@/components/game/example";
 
 export default function Home() {
   useEffect(() => {
+    const config = {
+      type: Phaser.AUTO,
+      width: 800,
+      height: 600,
+      parent: "phaser-container",
+      scene: Example,
+      physics: {
+        default: "arcade",
+        arcade: {
+          gravity: { y: 0 },
+        },
+      },
+    };
+
     const game = new Phaser.Game(config);
     return () => {
       game.destroy(true);
