@@ -1,7 +1,9 @@
 "use client";
+
+import { useEffect } from "react";
 import * as Phaser from "phaser";
 
-export default class Example extends Phaser.Scene {
+class Example extends Phaser.Scene {
   downKeyDebug;
   upKeyDebug;
   rightKeyDebug;
@@ -38,4 +40,33 @@ export default class Example extends Phaser.Scene {
       this.player.setVelocityY(300);
     }
   }
+}
+
+export default function Home() {
+  useEffect(() => {
+    const config = {
+      type: Phaser.AUTO,
+      width: 800,
+      height: 600,
+      parent: "phaser-container",
+      scene: Example,
+      physics: {
+        default: "arcade",
+        arcade: {
+          gravity: { y: 0 },
+        },
+      },
+    };
+
+    const game = new Phaser.Game(config);
+    return () => {
+      game.destroy(true);
+    };
+  }, []);
+  return (
+    <div
+      id="phaser-container"
+      className="flex items-center justify-center"
+    ></div>
+  );
 }
