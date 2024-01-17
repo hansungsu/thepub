@@ -17,7 +17,7 @@ class Example extends Phaser.Scene {
       "elephant",
       "https://labs.phaser.io/assets/sprites/elephant.png"
     );
-    this.load.spritesheet("body", "/body.png", {
+    this.load.spritesheet("body", "/walkcycle/BODY_male.png", {
       frameWidth: 64, // 각 프레임의 너비
       frameHeight: 64, // 각 프레임의 높이
     });
@@ -72,7 +72,8 @@ class Example extends Phaser.Scene {
     if (this.cursors.left.isDown) {
       this.player.setVelocityX(-300);
       this.player.play("walk-left", true);
-    } else if (this.cursors.right.isDown) {
+    }
+    if (this.cursors.right.isDown) {
       this.player.setVelocityX(300);
       this.player.play("walk-right", true);
     }
@@ -80,7 +81,8 @@ class Example extends Phaser.Scene {
     if (this.cursors.up.isDown) {
       this.player.setVelocityY(-300);
       this.player.play("walk-up", true);
-    } else if (this.cursors.down.isDown) {
+    }
+    if (this.cursors.down.isDown) {
       this.player.setVelocityY(300);
       this.player.play("walk-down", true);
     }
@@ -95,6 +97,7 @@ export default function Home() {
       height: 600,
       parent: "phaser-container",
       scene: Example,
+      pixelArt: true,
       physics: {
         default: "arcade",
         arcade: {
