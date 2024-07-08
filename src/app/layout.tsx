@@ -22,17 +22,15 @@ export default function RootLayout({
     <html>
       <body className={inter.className}>
         <StyledComponentsRegistry>
-          <Nav />
-          <section className="container mx-auto">
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="light"
-              enableSystem
-              disableTransitionOnChange
-            >
-              {children}
-            </ThemeProvider>
-          </section>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Nav />
+            <section className="container mx-auto">{children}</section>
+          </ThemeProvider>
         </StyledComponentsRegistry>
       </body>
     </html>
