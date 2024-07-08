@@ -6,7 +6,11 @@ const Game = dynamic(() => import("@/components/game/example"), { ssr: false });
 export default function Home() {
   return (
     <div>
-      <Container>오케이; 앞뒤양옆 완성</Container>
+      <Container>
+        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+          The Joke Tax Chronicles
+        </h1>
+      </Container>
       <Game />
     </div>
   );

@@ -4,6 +4,7 @@ import Nav from "@/components/layout/nav";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,16 @@ export default function RootLayout({
       <body className={inter.className}>
         <StyledComponentsRegistry>
           <Nav />
-          <section className="container mx-auto">{children}</section>
+          <section className="container mx-auto">
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="light"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </section>
         </StyledComponentsRegistry>
       </body>
     </html>
