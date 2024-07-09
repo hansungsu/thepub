@@ -19,7 +19,7 @@ export default async function Blog() {
   return (
     <div>
       <BlogList />
-      <ul>
+      {/* <ul>
         {posts.map((item: any) => (
           <li key={item.id}>
             <Link href={`/blog/${item.id}`}>
@@ -27,7 +27,7 @@ export default async function Blog() {
             </Link>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 }
