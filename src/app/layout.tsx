@@ -28,8 +28,10 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Nav />
-            <section className="container mx-auto">{children}</section>
+            <div className="flex min-h-screen w-full flex-col">
+              <Nav />
+              <section>{children}</section>
+            </div>
           </ThemeProvider>
         </StyledComponentsRegistry>
       </body>
