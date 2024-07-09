@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BLOG_URL } from "@/constants/url";
+import { BlogList } from "@/components/blog/BlogList";
 
 async function getPosts() {
   const url = `${BLOG_URL}/wp-json/wp/v2/posts`;
@@ -17,7 +18,8 @@ export default async function Blog() {
   const posts = await getPosts();
   return (
     <div>
-      <ul>
+      <BlogList />
+      {/* <ul>
         {posts.map((item: any) => (
           <li key={item.id}>
             <Link href={`/blog/${item.id}`}>
@@ -25,7 +27,7 @@ export default async function Blog() {
             </Link>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 }
