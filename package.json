@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "firebase": "^10.12.2",
     "next": "14.0.4",
     "phaser": "^3.70.0",
     "react": "^18",
