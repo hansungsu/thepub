@@ -26,10 +26,10 @@ export default function Nav() {
             <span className="sr-only">Acme Inc</span>
           </Link>
           <Link
-            href="/handmade"
+            href="/handmadeblog"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            HANDMADE
+            HandmadeBlog
           </Link>
           <Link
             href="/blog"
