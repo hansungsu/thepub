@@ -6,12 +6,23 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "PLAY BLOG :: THE PUB ::",
   description: "welcome visit the PUB",
 };
+
+// Create a client
+const queryClient = new QueryClient()
 
 export default function RootLayout({
   children,
@@ -21,6 +32,7 @@ export default function RootLayout({
   return (
     <html>
       <body className={inter.className}>
+      <QueryClientProvider client={queryClient}>
         <StyledComponentsRegistry>
           <ThemeProvider
             attribute="class"
@@ -34,6 +46,7 @@ export default function RootLayout({
             </div>
           </ThemeProvider>
         </StyledComponentsRegistry>
+      </QueryClientProvider>
       </body>
     </html>
   );
